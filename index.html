@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Personal Gallery Archives</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for Cyberpunk Aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="png"  href="https://cdn-icons-png.flaticon.com/512/1375/1375106.png">
+</head>
+<body>
+
+    <!-- Background Grid & Scanline FX -->
+    <div class="cyber-bg"></div>
+    <div class="scanline"></div>
+
+    <!-- Navigation Bar -->S
+    <nav class="navbar">
+        <div class="nav-logo">CYBER_<span>VAULT</span></div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">HOME</a></li>
+            <li><a href="#gallery">GALLERY</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header Section -->
+    <header id="home" class="header">
+        <div class="header-content animate-on-scroll">
+            <h1 class="glitch" data-text="PERSONAL_LOGS.EXE">PERSONAL_GALLERY.EXE</h1>
+            <p class="subtitle">A collection of my personal photos, favorite anime, and paintings genre</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery-section">
+            <h2 class="section-title animate-on-scroll"><span>01.</span> MEMORY_GRID</h2>
+
+            <!-- Filter Controls -->
+            <div class="filter-container animate-on-scroll">
+                <button class="filter-btn active" data-filter="all">ALL_DATA</button>
+                <button class="filter-btn" data-filter="landscapes">LANDSCAPES</button>
+                <button class="filter-btn" data-filter="portraits">PORTRAITS</button>
+                <button class="filter-btn" data-filter="anime">ANIME</button>
+                <button class="filter-btn" data-filter="paintings">PAINTINGS</button>
+            </div>
+
+            <!-- Image Grid (CSS Grid) -->
+            <div class="photo-grid">
+                
+                <div class="photo-card animate-on-scroll" data-category="landscapes">
+                    <div class="img-wrapper">
+                        <img src="images/landscape1.jfif" alt="Neon Vista">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-info">
+                        <span class="tag">LANDSCAPES</span>
+                        <h3>Midnight Vista</h3>
+                        <p>Squad personnel observing the illuminated sector grid from an elevated observation point.</p>
+                    </div>
+                </div>
+            
+                <div class="photo-card animate-on-scroll" data-category="landscapes">
+                    <div class="img-wrapper">
+                        <img src="images/landscape2.jfif" alt="Horizon Skyline">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-info">
+                        <span class="tag">LANDSCAPES</span>
+                        <h3>Verdant Ridgeline</h3>
+                        <p>Undulating planetary terrain marking the boundary of the uncolonized wilderness.</p>
+                    </div>
+                </div>
+
+                <div class="photo-card animate-on-scroll" data-category="landscapes">
+                    <div class="img-wrapper">
+                        <img src="images/landscape3.jfif" alt="Horizon Skyline">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-info">
+                        <span class="tag">LANDSCAPES</span>
+                        <h3>Bamboo Sector</h3>
+                        <p>Dense biogenic flora cluster providing natural concealment near the perimeter.</p>
+                    </div>
+                </div>
+
+                <div class="photo-card animate-on-scroll" data-category="landscapes">
+                    <div class="img-wrapper">
+                        <img src="images/landscape4.jfif" alt="Horizon Skyline">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-info">
+                        <span class="tag">LANDSCAPES</span>
+                        <h3>Thicket Outpost</h3>
+                        <p>Overgrown biological canopy monitored for unauthorized movement and signal obstruction.</p>
+                    </div>
+                </div>
+
+                    <div class="photo-card animate-on-scroll" data-category="landscapes">
+                    <div class="img-wrapper">
+                        <img src="images/landscape6.jpg" alt="Horizon Skyline">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-info">
+                        <span class="tag">LANDSCAPES</span>
+                        <h3>Late Night Setup</h3>
+                        <p>A casual selfie of me sitting in a gaming chair, lit up in a dim room.</p>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="photo-card animate-on-scroll" data-category="portraits">
+                    <div class="img-wrapper">
+                        <img src="images/portrait1.jfif" alt="Neural Subject">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-info">
+                        <span class="tag">PORTRAITS</span>
+                        <h3>Sunset Solitude</h3>
+                        <p>Taking a quiet moment at the overlook as dusk settles over the distant hills.</p>
+                    </div>
+                </div>
+
+
+                <div class="photo-card animate-on-scroll" data-category="portraits">
+                    <div class="img-wrapper">
+                        <img src="images/portrait2.jfif" alt="Cyber Visor Mask">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-info">
+                        <span class="tag">PORTRAITS</span>
+                        <h3>The Crew</h3>
+                        <p>Hanging out and kicking back together late into the night.</p>
+                    </div>
+                </div>
+
+                <div class="photo-card animate-on-scroll" data-category="portraits">
+                    <div class="img-wrapper">
+                        <img src="images/portrait3.jfif" alt="Cyber Visor Mask">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-info">
+                        <span class="tag">PORTRAITS</span>
+                        <h3>City Stroll</h3>
+                        <p>Checking out the indoor garden view from the upper level of the mall.</p>
+                    </div>
+                </div>
+
+                <div class="photo-card animate-on-scroll" data-category="portraits">
+                    <div class="img-wrapper">
+                        <img src="images/portrait4.jfif" alt="Cyber Visor Mask">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-info">
+                        <span class="tag">PORTRAITS</span>
+                        <h3>Top of the World</h3>
+                        <p>Taking in the massive panoramic view across the green mountain range.</p>
+                    </div>
+                </div>
+
+                <div class="photo-card animate-on-scroll" data-category="portraits">
+                    <div class="img-wrapper">
+                        <img src="images/portrait5.jfif" alt="Cyber Visor Mask">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-info">
+                        <span class="tag">PORTRAITS</span>
+                        <h3>City Lights</h3>
+                        <p>Overlooking the glowing skyline from high up on the ridge.</p>
+                    </div>
+                </div>
+
+                <div class="photo-card animate-on-scroll" data-category="portraits">
+                    <div class="img-wrapper">
+                        <img src="images/portrait6.jpg" alt="Cyber Visor Mask">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-info">
+                        <span class="tag">PORTRAITS</span>
+                        <h3>Mountain Overlook</h3>
+                        <p>Standing at the glass railing of a high deck, surrounded by misty green hills and forest views.</p>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="photo-card animate-on-scroll" data-category="anime">
+                    <div class="img-wrapper">
+                        <img src="https://i.pinimg.com/736x/18/9c/ef/189cefae2c425910f9347141d078547e.jpg" alt="Cyber Anime Concept">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-info">
+                        <span class="tag">ANIME</span>
+                        <h3>Rimuru Tempest</h3>
+                        <p>A close-up portrait of Rimuru Tempest surrounded by blue aura effects.</p>
+                    </div>
+                </div>
+
+                                <div class="photo-card animate-on-scroll" data-category="anime">
+                    <div class="img-wrapper">
+                        <img src="https://i.pinimg.com/736x/c0/ed/c2/c0edc26d5c3af331f229f892f674a631.jpg" alt="Mecha Concept">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-info">
+                        <span class="tag">ANIME</span>
+                        <h3>Diablo</h3>
+                        <p>Stylized monochrome illustration of Diablo with glowing yellow eyes through shattered glass.</p>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+                <div class="photo-card animate-on-scroll" data-category="paintings">
+                    <div class="img-wrapper">
+                        <img src="https://i.pinimg.com/1200x/b0/dc/33/b0dc33d9ec073599e7cc1e872d8ee45f.jpg" alt="Digital Oil Painting">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-info">
+                        <span class="tag">PAINTINGS</span>
+                        <h3>Watcher at the Staircase</h3>
+                        <p>A dark silhouette standing atop stairs against a surreal, swirling red backdrop filled with cosmic eyes.</p>
+                    </div>
+                </div>
+
+
+                <div class="photo-card animate-on-scroll" data-category="paintings">
+                    <div class="img-wrapper">
+                        <img src="https://i.pinimg.com/1200x/25/d9/7b/25d97b93aa06671c0d2366538042476e.jpg" alt="Impressionist Grid">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-info">
+                        <span class="tag">PAINTINGS</span>
+                        <h3>Winter Cabin Refuge</h3>
+                        <p>A warm, glowing wooden cabin nestled in a snowy pine forest under a gentle snowfall.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <h2 class="section-title animate-on-scroll"><span>02.</span> ARCHIVIST_PROFILE</h2>
+            <div class="about-card animate-on-scroll">
+                <div class="about-text">
+                    <p>Welcome to my Photo Gallery. I am a College student at Asian College Of Technology taking BSIT. This is my photo collection about my personal portrait photos, landscape photos, favorite anime, and favorite genre paintings.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <h2 class="section-title animate-on-scroll"><span>03.</span> COMM_LINK</h2>
+            
+            <div class="contact-container">
+                <!-- Direct Contact Information -->
+                <div class="contact-info animate-on-scroll">
+                    <h3>DIRECT_SIGNALS</h3>
+                    <p class="contact-desc">Reach out via secure neural link or social channels for network collaborations and commission inquiries.</p>
+
+                    <ul class="info-list">
+                        <li>
+                            <span class="info-label">EMAIL //</span> 
+                            <a href="mailto:operator@cybervault.net" class="info-val">christiandumdum6@gmail.com</a>
+                        </li>
+                        <li>
+                            <span class="info-label">DISCORD //</span> 
+                            <span class="info-val">Nekon</span>
+                        </li>
+                        <li>
+                            <span class="info-label">LOCATION //</span> 
+                            <span class="info-val">Cebu City</span>
+                        </li>
+
+                    </ul>
+
+                    <div class="social-links">
+                        <a href="https://github.com" target="_blank" class="social-btn">GITHUB</a>
+                        <a href="https://twitter.com" target="_blank" class="social-btn">X_TWITTER</a>
+                        <a href="https://instagram.com" target="_blank" class="social-btn">INSTAGRAM</a>
+                        <a href="https://artstation.com" target="_blank" class="social-btn">ARTSTATION</a>
+                    </div>
+                </div>
+
+                <!-- Contact Form Box -->
+                <div class="contact-box animate-on-scroll">
+                    <h3>TRANSMIT_MESSAGE</h3>
+                    <form class="cyber-form" id="comm-form">
+                        <input type="text" id="sender-name" placeholder="CALLSIGN / NAME" required>
+                        <input type="email" id="sender-email" placeholder="SIGNAL_ID / EMAIL" required>
+                        <textarea id="sender-msg" rows="4" placeholder="TRANSMISSION CONTENT..." required></textarea>
+                        <button type="submit" class="cyber-btn">TRANSMIT_DATA</button>
+                    </form>
+                    <div id="form-status" class="form-status"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Lightbox Preview -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-img" src="" alt="Enlarged Preview">
+        <div id="lightbox-caption"></div>
+        <div class="lightbox-nav">
+            <button id="prev-btn" class="cyber-nav-btn">&lt; PREV</button>
+            <button id="next-btn" class="cyber-nav-btn">NEXT &gt;</button>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

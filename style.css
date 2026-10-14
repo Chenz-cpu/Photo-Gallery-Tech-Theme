@@ -1,0 +1,530 @@
+/* ==========================================================================
+   RESET & CYBER VARIABLES
+   ========================================================================== */
+:root {
+    --bg-dark: #070913;
+    --card-bg: rgba(16, 21, 40, 0.85);
+    --neon-cyan: #00f3ff;
+    --neon-magenta: #ff0055;
+    --neon-yellow: #fcee0a;
+    --text-color: #d1f7ff;
+    --text-dim: #7393a7;
+    --font-heading: 'Orbitron', sans-serif;
+    --font-body: 'Rajdhani', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    font-size: 18px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Background Cyber Grid Pattern */
+.cyber-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: 
+        linear-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: -2;
+}
+
+/* CRT Overlay Scanline Effect */
+.scanline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0) 50%,
+        rgba(0, 0, 0, 0.3) 50%,
+        rgba(0, 0, 0, 0.3)
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.6;
+}
+
+/* ==========================================================================
+   NAVIGATION BAR
+   ========================================================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 8%;
+    background: rgba(7, 9, 19, 0.9);
+    border-bottom: 2px solid var(--neon-cyan);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.nav-logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.nav-logo span {
+    color: var(--neon-magenta);
+    text-shadow: 0 0 10px var(--neon-magenta);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+    padding: 0.3rem 0.6rem;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 8px var(--neon-cyan);
+    border-bottom: 2px solid var(--neon-cyan);
+}
+
+/* ==========================================================================
+   HEADER SECTION
+   ========================================================================== */
+.header {
+    text-align: center;
+    padding: 5rem 1rem 3rem;
+}
+
+.glitch {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 3px 3px var(--neon-magenta), -3px -3px var(--neon-cyan);
+    letter-spacing: 3px;
+}
+
+.subtitle {
+    color: var(--text-dim);
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   GALLERY & CSS GRID
+   ========================================================================== */
+.gallery-section, .about-section, .contact-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--neon-magenta);
+    padding-left: 1rem;
+}
+
+.section-title span {
+    color: var(--neon-magenta);
+}
+
+/* Filter Controls */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    padding: 0.5rem 1.2rem;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--neon-cyan);
+    color: var(--bg-dark);
+    box-shadow: 0 0 12px var(--neon-cyan);
+}
+
+/* Photo Grid Setup */
+.photo-grid {
+    display: grid;
+    /* Clean responsive columns */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    align-items: stretch; /* Ensures cards in the same row match height */
+}
+
+.photo-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(0, 243, 255, 0.3);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Force every card to fill row height equally */
+    cursor: pointer;
+    position: relative;
+}
+
+.photo-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--neon-magenta);
+    box-shadow: 0 0 20px rgba(255, 0, 85, 0.4);
+}
+
+/* Force every image container to have the exact same size and aspect ratio */
+.img-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10; /* Fixed aspect ratio prevents height shifts */
+    overflow: hidden;
+    background: #000;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops images cleanly without distortion */
+    filter: brightness(0.9) contrast(1.1);
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.photo-card:hover .img-wrapper img {
+    transform: scale(1.08);
+    filter: brightness(1.1) contrast(1.2);
+}
+
+/* Flex grow pushes card footer/content evenly across all cards */
+.card-info {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    flex-grow: 1; 
+}
+
+.tag {
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    color: var(--neon-yellow);
+    letter-spacing: 1px;
+}
+
+.card-info h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.card-info p {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   ABOUT & CONTACT SECTIONS
+   ========================================================================== */
+.about-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(0, 243, 255, 0.3);
+    padding: 2rem;
+    border-radius: 4px;
+    line-height: 1.6;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.contact-info, .contact-box {
+    background: var(--card-bg);
+    border: 1px solid rgba(0, 243, 255, 0.3);
+    padding: 2rem;
+    border-radius: 4px;
+}
+
+.contact-info h3, .contact-box h3 {
+    font-family: var(--font-heading);
+    color: var(--neon-cyan);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px dashed var(--neon-cyan);
+    padding-bottom: 0.5rem;
+}
+
+.contact-desc {
+    color: var(--text-dim);
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+}
+
+.info-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.info-label {
+    font-family: var(--font-heading);
+    color: var(--neon-yellow);
+    font-size: 0.85rem;
+    margin-right: 0.5rem;
+}
+
+.info-val {
+    color: #fff;
+    text-decoration: none;
+    font-family: var(--font-body);
+}
+
+.info-val:hover {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 8px var(--neon-cyan);
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.social-btn {
+    border: 1px solid var(--neon-magenta);
+    color: var(--neon-magenta);
+    padding: 0.4rem 0.8rem;
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    background: var(--neon-magenta);
+    color: #fff;
+    box-shadow: 0 0 10px var(--neon-magenta);
+}
+
+.cyber-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.cyber-form input,
+.cyber-form textarea {
+    background: rgba(7, 9, 19, 0.8);
+    border: 1px solid var(--text-dim);
+    color: var(--neon-cyan);
+    padding: 0.8rem;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    border-radius: 2px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.cyber-form input:focus,
+.cyber-form textarea:focus {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+}
+
+.cyber-btn {
+    background: var(--neon-magenta);
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+.cyber-btn:hover {
+    background: #fff;
+    color: var(--neon-magenta);
+    box-shadow: 0 0 15px var(--neon-magenta);
+}
+
+.form-status {
+    margin-top: 1rem;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    min-height: 1.2rem;
+}
+
+/* ==========================================================================
+   LIGHTBOX MODAL & NAVIGATION
+   ========================================================================== */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(7, 9, 19, 0.95);
+    backdrop-filter: blur(8px);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lightbox-img {
+    max-width: 85%;
+    max-height: 70%;
+    border: 2px solid var(--neon-cyan);
+    box-shadow: 0 0 25px var(--neon-cyan);
+}
+
+#lightbox-caption {
+    margin-top: 1rem;
+    font-family: var(--font-heading);
+    color: var(--text-color);
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.lightbox-nav {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.cyber-nav-btn {
+    background: transparent;
+    border: 1px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    font-family: var(--font-heading);
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cyber-nav-btn:hover {
+    background: var(--neon-cyan);
+    color: var(--bg-dark);
+    box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 1.5rem;
+    right: 2.5rem;
+    color: var(--neon-magenta);
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid rgba(0, 243, 255, 0.2);
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    color: var(--text-dim);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .glitch {
+        font-size: 2rem;
+    }
+
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   SCROLL ANIMATIONS
+   ========================================================================== */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
